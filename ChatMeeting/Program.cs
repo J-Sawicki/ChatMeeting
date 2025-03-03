@@ -1,3 +1,4 @@
+using ChatMeeting.API.Extensions;
 using ChatMeeting.Core.Domain;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,9 +12,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var conncectionString = configuration.GetValue<string>("ConnectionString");
-builder.Services.AddDbContext<ChatDbContext>(options => 
-    options.UseSqlServer(conncectionString));
+builder.Services.AddConfiguration(configuration);
+builder.Services.AddServices();
 
 var app = builder.Build();
 
