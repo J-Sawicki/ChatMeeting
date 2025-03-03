@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatMeeting.Core.Domain", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatMeeting.Infrastructure", "ChatMeeting.Infrastructure\ChatMeeting.Infrastructure.csproj", "{8F8BC2E9-231F-439A-B317-E8BF1F03EBFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatMeeting.Core.Application[", "ChatMeeting.Core.Application[\ChatMeeting.Core.Application[.csproj", "{CE2294C1-CDD9-41A8-A5FB-10D20B8521C9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatMeeting.Core.Application", "ChatMeeting.Core.Application[\ChatMeeting.Core.Application.csproj", "{CE2294C1-CDD9-41A8-A5FB-10D20B8521C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
