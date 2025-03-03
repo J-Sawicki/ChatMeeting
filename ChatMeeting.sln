@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatMeeting.API", "ChatMeeting\ChatMeeting.API.csproj", "{5316B33F-8CEC-40CB-8676-6F4A37D07FA4}"
 EndProject
@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatMeeting.Core.Domain", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatMeeting.Infrastructure", "ChatMeeting.Infrastructure\ChatMeeting.Infrastructure.csproj", "{8F8BC2E9-231F-439A-B317-E8BF1F03EBFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatMeeting.Core.Application", "ChatMeeting.Core.Application[\ChatMeeting.Core.Application.csproj", "{CE2294C1-CDD9-41A8-A5FB-10D20B8521C9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatMeeting.Core.Application", "ChatMeeting.Core.Application\ChatMeeting.Core.Application.csproj", "{8382ED33-7FFC-4927-8403-D4B0433665A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{8F8BC2E9-231F-439A-B317-E8BF1F03EBFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F8BC2E9-231F-439A-B317-E8BF1F03EBFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F8BC2E9-231F-439A-B317-E8BF1F03EBFC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CE2294C1-CDD9-41A8-A5FB-10D20B8521C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CE2294C1-CDD9-41A8-A5FB-10D20B8521C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CE2294C1-CDD9-41A8-A5FB-10D20B8521C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CE2294C1-CDD9-41A8-A5FB-10D20B8521C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8382ED33-7FFC-4927-8403-D4B0433665A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8382ED33-7FFC-4927-8403-D4B0433665A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8382ED33-7FFC-4927-8403-D4B0433665A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8382ED33-7FFC-4927-8403-D4B0433665A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
