@@ -1,4 +1,5 @@
 ﻿using ChatMeeting.Core.Domain.Interfaces.Repositories;
+using ChatMeeting.Core.Domain.Interfaces.Services;
 using ChatMeeting.Core.Domain.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,24 +11,23 @@ namespace ChatMeeting.API.Controllers
     [ApiController]
     public class AuthController : Controller
     {
-        private readonly IUserRepository _userRepository;
+        private readonly IAuthService _userService;
 
-        public AuthController(IUserRepository userRepository)
+        public AuthController(IAuthService userService)
         {
-            _userRepository = userRepository;
+            _userService = userService;
         }
 
         [HttpGet]
         public async Task<JsonResult> GetUser()
         {
-            var user = new User()
-            {
-                Username = "test",
-                Password = "haslo"
-            };
 
-            await _userRepository.AddUser(user);
-            return Json(user);
+            await _userService.RegisterUser(new Core.Domain.DTOs.RegisterUserDto()
+            {
+                Username = "test123",
+                Password = "password"
+            });
+            return Json("");
         }
     }
 }
