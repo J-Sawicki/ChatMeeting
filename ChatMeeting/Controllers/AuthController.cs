@@ -1,4 +1,5 @@
-﻿using ChatMeeting.Core.Domain.Interfaces.Repositories;
+﻿using ChatMeeting.Core.Domain.DTOs;
+using ChatMeeting.Core.Domain.Interfaces.Repositories;
 using ChatMeeting.Core.Domain.Interfaces.Services;
 using ChatMeeting.Core.Domain.Models;
 using Microsoft.AspNetCore.Http;
@@ -11,23 +12,33 @@ namespace ChatMeeting.API.Controllers
     [ApiController]
     public class AuthController : Controller
     {
-        private readonly IAuthService _userService;
+        private readonly IAuthService _authService;
+        private readonly ILogger<AuthController> _logger;
 
-        public AuthController(IAuthService userService)
+        public AuthController(IAuthService userService, ILogger<AuthController> logger)
         {
-            _userService = userService;
+            _authService = userService;
+            _logger = logger;
         }
 
-        [HttpGet]
-        public async Task<JsonResult> GetUser()
+        [HttpPut("register")]
+        public async Task<IActionResult> Register([FromBody] RegisterUserDto registerUser)
         {
-
-            await _userService.RegisterUser(new Core.Domain.DTOs.RegisterUserDto()
+            try
             {
-                Username = "test123",
-                Password = "password"
-            });
-            return Json("");
+                await _authService.RegisterUser(registerUser);
+                return Ok(new { message = "User registered succesfully" });
+            }
+            catch (InvalidOperationException ex)
+            {
+                _logger.LogWarning(ex, $"Registration attempt failed: User already exists with login: {registerUser.Username}");
+                return Conflict(new { message = ex.Message });
+            }
+            catch (Exception ex) 
+            {
+                _logger.LogError(ex, $"An unexpected erorr occured during registration for user: {registerUser.Username}");
+                return StatusCode(500, "An unexpected error occured during registration");
+            }
         }
     }
 }
